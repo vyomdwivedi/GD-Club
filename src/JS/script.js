@@ -5,8 +5,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if (registerForm) {
         registerForm.addEventListener('submit', (e) => {
             e.preventDefault();
-            const email = document.getElementById('email').value;
             const username = document.getElementById('username').value;
+            const email = document.getElementById('email').value;
             const password = document.getElementById('password').value;
             const interests = document.getElementById('interests').value;
             const users = JSON.parse(localStorage.getItem('users') || '[]');
@@ -14,11 +14,10 @@ document.addEventListener('DOMContentLoaded', () => {
             if (users.some(user => user.username === username)) {
                 alert('Username already exists. Please choose another one.');
             } else {
-                users.push({ email, username, password, interests });
+                users.push({ username, email, password, interests });
                 localStorage.setItem('users', JSON.stringify(users));
                 alert('User Registration Successful.');
-                displayMembers(); // Update member directory after registration
-                window.location.href = 'src\\login.html';
+                window.location.href = 'src/login.html';
             }
         });
     }
@@ -41,27 +40,100 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Function to display members from local storage
-    function displayMembers() {
-        // Get the members array from local storage
-        let members = JSON.parse(localStorage.getItem('users')) || [];
-        let membersHTML = '';
+    document.getElementById('createEvent').addEventListener('click', () => {
+        const index = document.getElementById('createEvent').getAttribute('data-index');
+        const title = document.getElementById('event-title').value;
+        const date = document.getElementById('event-date').value;
+        const description = document.getElementById('event-description').value;
 
-        // Loop through each member and create HTML for display
-        members.forEach(function(member, index) {
-            membersHTML += `
-                <div class="member">
-                    <h3>${member.username}</h3>
-                    <p>Email: ${member.email}</p>
-                    <p>Interests: ${member.interests}</p>
+        let events = JSON.parse(localStorage.getItem('events')) || [];
+
+        if (index === null) {
+            // Create new event
+            const event = {
+                title: title,
+                date: date,
+                description: description
+            };
+            events.push(event);
+        } else {
+            // Update existing event
+            events[index] = {
+                title: title,
+                date: date,
+                description: description
+            };
+        }
+
+        localStorage.setItem('events', JSON.stringify(events));
+        displayEvents();
+
+        // Reset form
+        document.getElementById('createEvent').textContent = 'Create Event';
+        document.getElementById('createEvent').removeAttribute('data-index');
+        document.getElementById('event-title').value = '';
+        document.getElementById('event-date').value = '';
+        document.getElementById('event-description').value = '';
+    });
+
+    function displayEvents() {
+        let events = JSON.parse(localStorage.getItem('events')) || [];
+        let eventsHTML = '';
+
+        events.forEach(function(event, index) {
+            eventsHTML += `
+                <div class="card">
+                    <h3>${event.title}</h3>
+                    <p><strong>Date:</strong> ${event.date}</p>
+                    <p><strong>Description:</strong> ${event.description}</p>
+                    <button class="btn edit-event" data-index="${index}">Edit</button>
+                    <button class="btn delete-event" data-index="${index}">Delete</button>
                 </div>
             `;
         });
 
-        // Display the HTML for members
-        document.getElementById('members').innerHTML = membersHTML;
+        document.getElementById('events').innerHTML = eventsHTML;
+
+        document.querySelectorAll('.edit-event').forEach(button => {
+            button.addEventListener('click', (e) => {
+                const index = e.target.getAttribute('data-index');
+                const event = events[index];
+                document.getElementById('event-title').value = event.title;
+                document.getElementById('event-date').value = event.date;
+                document.getElementById('event-description').value = event.description;
+                document.getElementById('createEvent').textContent = 'Update Event';
+                document.getElementById('createEvent').setAttribute('data-index', index);
+            });
+        });
+
+        document.querySelectorAll('.delete-event').forEach(button => {
+            button.addEventListener('click', (e) => {
+                const index = e.target.getAttribute('data-index');
+                events.splice(index, 1);
+                localStorage.setItem('events', JSON.stringify(events));
+                displayEvents();
+            });
+        });
     }
 
-    // Call displayMembers() function on page load to show existing members
+    displayEvents();
+
+    function displayMembers() {
+        const members = JSON.parse(localStorage.getItem('users')) || [];
+        let membersHTML = '';
+
+        members.forEach(member => {
+            membersHTML += `
+                <div class="member">
+                    <h3>${member.username}</h3>
+                    <p><strong>Email:</strong> ${member.email}</p>
+                    <p><strong>Interests:</strong> ${member.interests}</p>
+                </div>
+            `;
+        });
+
+        document.getElementById('member-list').innerHTML = membersHTML;
+    }
+
     displayMembers();
 });
