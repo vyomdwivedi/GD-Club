@@ -1,7 +1,7 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
     background-color: #f1f1f1;
-    background-image: url(../Assets/background.jpg);
+    background-image: url(../images/background.jpg);
     background-size: cover;
 }
 
@@ -20,12 +20,12 @@ h1 {
 
 h2 {
     text-align: center;
-    color: #000000;
+    color: #6f70d3;
 }
 
 #loginLink {
     text-align: center;
-    color: #000000;
+    color: #6f70d3;
 }
 
 .formText {
@@ -45,14 +45,10 @@ form {
     backdrop-filter: blur(3px);
 }
 
-label {
-    margin-bottom: 10px; /* Adjust the spacing between labels */
-}
-
 input[type=text], input[type=password] {
   width: 100%;
   padding: 12px 20px;
-  margin-bottom: 10px; /* Adjust the spacing between inputs */
+  margin: 8px 0;
   display: inline-block;
   border: 1px solid #ccc;
   box-sizing: border-box;
@@ -62,7 +58,7 @@ button {
   background-color: #04AA6D;
   color: white;
   padding: 14px 20px;
-  margin: 10px 0; /* Adjust the spacing around the button */
+  margin: 8px 0;
   border: none;
   cursor: pointer;
   width: 100%;
