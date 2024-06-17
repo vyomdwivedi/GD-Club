@@ -1,75 +1,138 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background: linear-gradient(135deg, #800000, #4B0082, #000000);
+    color: #fff;
 }
+
 header, nav, main, section {
     padding: 20px;
     margin: 10px;
-    background: white;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    background: rgba(34, 34, 34, 0.8); /* Semi-transparent black */
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
 }
+
 header {
-    background-color: #4CAF50;
+    background-color: #290142; /* Neon pink */
     color: white;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 2px;
+    text-shadow: #9d00ff 0 0 10px;
 }
+
 nav {
     display: flex;
     justify-content: space-around;
+    background-color: #2F4F4F; /* Dark slate gray */
 }
+
 nav a {
     text-decoration: none;
-    color: #4CAF50;
-    padding: 10px;
+    color: #00FFFF; /* Neon cyan */
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
 }
+
 nav a:hover {
-    background-color: #4CAF50;
-    color: white;
+    background-color: #00FFFF; /* Neon cyan */
+    color: black;
+    box-shadow: 0 0 10px #00FFFF;
 }
+
+a {
+    color: #ffff33; /* Bright yellow */
+}
+
+a:hover {
+    color: #ffbf00; /* Golden yellow */
+}
+
 .hidden {
     display: none;
 }
+
 .form-group {
     margin-bottom: 15px;
 }
+
 .form-group label {
     display: block;
     margin-bottom: 5px;
+    color: #FF1493; /* Neon pink */
 }
+
 .form-group input, .form-group textarea {
     width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    color: #333;
+    background: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
 }
+
 .btn {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #4CAF50;
-    color: white;
+    background-color: #ff4500; /* Dark red */
+    box-shadow: 0 0 10px #ff4500;
+    font-size: medium;
+    font-weight: bold;
+    color: black;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    transition: all 0.3s ease;
 }
+
 .btn:hover {
-    background-color: #45a049;
+    background-color: #8B0000; /* Neon orange */
+    color: white;
+    box-shadow: 0 0 10px #8B0000;
 }
+
 .card {
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 10px;
     padding: 20px;
     margin: 10px 0;
+    background: rgba(34, 34, 34, 0.9); /* Semi-transparent black */
+    color: #fff;
 }
+
 .chat {
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 10px;
     height: 200px;
     overflow-y: scroll;
     padding: 10px;
     margin-bottom: 10px;
+    background: rgba(0, 0, 0, 0.7); /* Semi-transparent black */
 }
+
 .chat p {
     margin: 5px 0;
+    color: #00FFFF; /* Neon cyan */
+}
+
+.member {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px 0;
+    background: rgba(34, 34, 34, 0.9); /* Semi-transparent black */
+    color: #fff;
+}
+
+.member h3 {
+    color: #FF1493; /* Neon pink */
+    margin-bottom: 5px;
+}
+
+.member p {
+    color: #00FFFF; /* Neon cyan */
+    margin-bottom: 5px;
 }
