@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GD Club Web Application</title>
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+
+<header>
+    <h1>GD Club Web Application</h1>
+</header>
+
+<nav>
+    <a href="#event-planner">Event Planner</a>
+    <a href="#resource-hub">Resource Hub</a>
+    <a href="#discussion-board">Discussion Board</a>
+    <a href="#project-showcase">Project Showcase</a>
+    <a href="#member-directory">Member Directory</a>
+    <a href="#announcements">Announcements</a>
+    <a href="#bonus-features">Bonus Features</a>
+</nav>
+
+<main>
+    <section id="event-planner">
+        <h2>Event Planner</h2>
+        <div class="form-group">
+            <label for="event-title">Event Title</label>
+            <input type="text" id="event-title">
+        </div>
+        <div class="form-group">
+            <label for="event-date">Event Date</label>
+            <input type="date" id="event-date">
+        </div>
+        <div class="form-group">
+            <label for="event-description">Event Description</label>
+            <textarea id="event-description"></textarea>
+        </div>
+        <button class="btn" onclick="createEvent()">Create Event</button>
+        <div id="events"></div>
+    </section>
+    
+    <section id="resource-hub">
+        <h2>Resource Hub</h2>
+        <p>Welcome to our Resource Hub! Here you can find various documents, tutorials, and project files shared by the club members.</p>
+        <h3>Featured Resources</h3>
+        <ul>
+            <li><a href="https://www.youtube.com/watch?v=HfTXHrWMGVY&list=PLZlA0Gpn_vH-cEDOofOujFIknfZZpIk3a">Introduction to Web Development</a></li>
+            <li><a href="https://www.youtube.com/watch?v=7wnove7K-ZQ&list=PLu0W_9lII9agwh1XjRt242xIpHhPT2llg">Python Programming Basics</a></li>
+            <li><a href="https://www.youtube.com/watch?v=ukzFI9rgwfU&list=PLEiEAq2VkUULYYgj13YHUWmRePqiu8Ddy">Machine Learning Fundamentals</a></li>
+        </ul>
+    </section>
+
+    <section id="discussion-board">
+        <h2>Discussion Board</h2>
+        <p>Engage in discussions, collaborate with fellow members, and share your thoughts on various topics related to technology and development.</p>
+        <h3>Recent Discussions</h3>
+        <div class="discussion">
+            <h4><a href="https://www.reddit.com/r/webdev/comments/y3xndx/whats_the_best_ide_for_web_development/?rdt=60872">Best IDE for Web Development?</a></h4>
+            <p>What IDE do you prefer for web development and why? Share your experiences!</p>
+        </div>
+        <div class="discussion">
+            <h4><a href="https://www.reddit.com/r/learnjavascript/comments/jpmcoo/best_resources_to_start_learning_javascript/">Learning Resources for JavaScript</a></h4>
+            <p>Looking for recommendations on the best resources to learn JavaScript. Any suggestions?</p>
+        </div>
+    </section>    
+
+    <section id="project-showcase">
+        <h2>Project Showcase</h2>
+        <p>Showcase your projects here with descriptions and screenshots. Get feedback from the community and highlight your achievements.</p>
+        <div class="project">
+            <h3>Portfolio Website</h3>
+            <p>A personal portfolio website showcasing my skills, projects, and experiences. Built with HTML, CSS, and JavaScript.</p>
+            <img src="Assets/portfolio-screenshot.png" alt="Portfolio Website Screenshot">
+        </div>
+        <div class="project">
+            <h3>Todo List App</h3>
+            <p>A simple todo list application built with React.js. Allows users to add, edit, and delete tasks.</p>
+            <img src="Assets/todo-app-screenshot.png" alt="Todo List App Screenshot">
+        </div>
+    </section    
+
+    <<section id="member-directory">
+        <h2>Member Directory</h2>
+        <div id="members"></div>
+    </section>    
+
+    <section id="announcements">
+        <h2>Announcements and Updates</h2>
+        <p>Stay informed with the latest club news, updates, and important announcements. Don't miss out on any exciting events or opportunities!</p>
+        <div class="announcement">
+            <h3>Upcoming Hackathon Event!</h3>
+            <p>We are excited to announce our upcoming hackathon event on July 15th! Get ready to showcase your coding skills and win exciting prizes.</p>
+        </div>
+        <div class="announcement">
+            <h3>New Member Registration Open</h3>
+            <p>We are now accepting registrations for new club members. Spread the word and invite your friends to join our community!</p>
+        </div>
+    </section>    
+
+    <section id="bonus-features">
+        <h2>Bonus Features</h2>
+        <p>Explore our Bonus Features section to enjoy additional activities, challenges, and valuable resources provided by our club leaders.</p>
+        <h3>Aarav's Fun Corner</h3>
+        <p>Welcome to Aarav's Fun Corner! Here you can find weekly coding challenges, tech news blasts, member spotlights, and coding tips.</p>
+        <ul>
+            <li>Weekly Challenges: Test your coding skills with our weekly challenges.</li>
+            <li>Tech News Blast: Stay up-to-date with the latest tech trends and fun facts.</li>
+            <li>Member Spotlight: Get to know our members and their achievements.</li>
+            <li>Coding Tips: Improve your coding efficiency with our useful tips and tricks.</li>
+        </ul>
+        <h3>Guru's Knowledge Nook</h3>
+        <p>Welcome to Guru's Knowledge Nook! Here you can find leadership lessons, industry insights, motivational musings, and book club picks.</p>
+        <ul>
+            <li>Leadership Lessons: Learn valuable leadership skills and tips.</li>
+            <li>Industry Insights: Stay informed about industry trends and career opportunities.</li>
+            <li>Motivational Musings: Get inspired with motivational quotes and success stories.</li>
+            <li>Book Club Picks: Explore recommended books and resources for personal and professional development.</li>
+        </ul>
+        <h3>Club Achievements Wall</h3>
+        <p>Celebrate our club's milestones, successful projects, and outstanding member contributions!</p>
+    </section>
+    
+</main>
+
+<script src="JS/script.js"></script>
+
+</body>
+</html>
